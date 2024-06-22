@@ -1,35 +1,30 @@
 
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Header from './conponents/Header'
+import MenuLateral from './conponents/MenuLateral'
 
 function App() {
 
 
   return (
     <>
-  <header> 
-    <div > Sistemas de Gestion de ventas</div>
-    <img src="/vite.svg" alt="vite logo"/>
-  </header>
 
+ <Header />
  <main>
-
+ 
   <aside>
-    <nav>
-      <ul id="menu_principal">
-        <li><a href="/"><i className="material-icons-outlined">home</i> Inicio</a></li>
-        <li><a href="/"><i className="material-icons-outlined">local_grocery_store</i> Productos</a></li>
-        <li><a href="/"><i className= "material-icons-outlined">groups</i>clientes</a></li>
-        <li><a href="/"><i className= "material-icons-outlined">point_of_sale</i>ventas</a></li>
-      
-      </ul>
-    </nav>
+    <MenuLateral />
   </aside>
 
-  <section id="contenido">
-   <h1>Hola mundo!</h1>
-
+<section id="contenido">
+  <Routes>
+          <Route path="/" element={<h1>Inicio</h1>} />
+          <Route path="/productos" element={<h1>Productos</h1>} />
+          <Route path="/clientes" element={<h1>Clientes</h1>} />
+          <Route path="/ventas" element={<h1>Ventas</h1>} />        
+        </Routes>
   </section>
-
  </main>
     </>
   )
